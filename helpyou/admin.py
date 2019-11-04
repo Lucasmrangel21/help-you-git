@@ -8,5 +8,3 @@ admin.site.register(TD_categorias)
 admin.site.register(TB_salas)
 admin.site.register(TB_psicologos)
 admin.site.register(TB_participantes)
-
-# Register your models here.
