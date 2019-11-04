@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #vindo{
+            width:100%;
+            font-size: 55px;
+            font-family: Courier;
+            text-align: center;
+            }
+
+        .links{
+            text-decoration: null;
+    }
+        body{
+        background-color: #00FFFF;
+        }
+
+
+
+
+    </style>
     <meta charset="UTF-8">
     <title>Help You - Inicio</title>
 </head>
 <body>
-<h1><b>help you</b></h1>
-<h2 style="text-align: center;">Seja bem-vindo</h2>
-<a href="{% url 'url_login' %}">Fazer login</a>
-<br><br>
-<a href="{% url 'url_home2' %}">Cadastre-se agora</a>
+    <div>
+        <img src="helpyou.jpg">
+    </div>
+<h2 id="vindo">Seja bem-vindo</h2>
+    <div class="links">
+        <a href="{% url 'url_login' %}">Fazer login</a>
+        <br><br>
+        <a href="{% url 'url_home2' %}">Cadastre-se agora</a>
+    </div>
 </body>
 </html>
