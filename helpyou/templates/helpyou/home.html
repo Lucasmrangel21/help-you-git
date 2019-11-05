@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <style>
@@ -8,20 +9,28 @@
         }
 
         #vindo{
+            background-color: #00FFFF;
             width:100%;
             font-size: 55px;
             font-family: Courier;
             text-align: center;
             }
 
-        .links{
-            text-decoration: null;
+        .links a{
+            color: white;
+            text-decoration: none;
+            float:right;
+            line-height: 1;
     }
+
+        a:hover{
+            background-color: #00FFFF;
+            }
+
+
         body{
-        background-color: #00FFFF;
+        background-color: black;
         }
-
-
 
 
     </style>
@@ -30,13 +39,15 @@
 </head>
 <body>
     <div>
-        <img src="helpyou.jpg">
+        <img src="{% static 'helpyou/img/helpyou.jpg' %}"/>
+        <div class="links">
+            <a href="{% url 'url_login' %}">Fazer login</a>
+            <br>
+            <br>
+            <a href="{% url 'url_home2' %}">Cadastre-se agora</a>
+        </div>
+        <h2 id="vindo">Seja bem-vindo</h2>
     </div>
-<h2 id="vindo">Seja bem-vindo</h2>
-    <div class="links">
-        <a href="{% url 'url_login' %}">Fazer login</a>
-        <br><br>
-        <a href="{% url 'url_home2' %}">Cadastre-se agora</a>
-    </div>
+
 </body>
 </html>
