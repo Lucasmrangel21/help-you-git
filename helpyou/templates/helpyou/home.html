@@ -9,45 +9,41 @@
         }
 
         #vindo{
-            background-color: #00FFFF;
-            width:100%;
-            font-size: 55px;
-            font-family: Courier;
-            text-align: center;
+            background-color: #FFFFFF;
+            padding: 60px;
+            margin: -75px;
             }
 
         .links a{
-            color: white;
+            font-size: 20px;
+            color: black;
             text-decoration: none;
             float:right;
-            line-height: 1;
+            line-height: -20;
+            padding: 10px;
     }
 
-        a:hover{
-            background-color: #00FFFF;
-            }
-
-
         body{
-        background-color: black;
+            background-color: #79e7ff;
         }
+
+        img{
+            height:70px;
+            width: auto;
+         }
 
 
     </style>
     <meta charset="UTF-8">
     <title>Help You - Inicio</title>
 </head>
+
 <body>
-    <div>
         <img src="{% static 'helpyou/img/helpyou.jpg' %}"/>
         <div class="links">
             <a href="{% url 'url_login' %}">Fazer login</a>
-            <br>
-            <br>
             <a href="{% url 'url_home2' %}">Cadastre-se agora</a>
         </div>
-        <h2 id="vindo">Seja bem-vindo</h2>
-    </div>
-
+        <h2 id="vindo"></h2>
 </body>
 </html>
