@@ -22,10 +22,10 @@ class TB_salas(models.Model):
     categoria = models.ForeignKey(TD_categorias, on_delete=models.CASCADE)
 
 class TB_participantes(models.Model):
-    nome = models.CharField(max_length=100)
-    cpf = models.IntegerField(primary_key=True)
     email = models.EmailField()
     senha = models.CharField(max_length=18)
+    nome = models.CharField(max_length=100)
+    cpf = models.IntegerField(primary_key=True)
     telefone = models.IntegerField()
     disturbio = models.TextField(null=True, blank=True)
     sala_inserido = models.ForeignKey(TB_salas, on_delete=models.CASCADE, null=True)
