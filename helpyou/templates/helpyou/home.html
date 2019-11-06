@@ -2,6 +2,11 @@
 {% load static %}
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <style>
         *{
             margin: 0;
@@ -19,8 +24,9 @@
             color: black;
             text-decoration: none;
             float:right;
-            line-height: -20;
-            padding: 10px;
+            line-height: 1;
+            padding: 10px 30px 10px 30px;
+            min-height: 45px;
     }
 
         body{
@@ -32,6 +38,11 @@
             width: auto;
          }
 
+        #a1:hover, #a2:hover{
+            color: white;
+            background-color: rgba(84, 91, 98, 1);
+            }
+
 
     </style>
     <meta charset="UTF-8">
@@ -41,8 +52,17 @@
 <body>
         <img src="{% static 'helpyou/img/helpyou.jpg' %}"/>
         <div class="links">
-            <a href="{% url 'url_login' %}">Fazer login</a>
-            <a href="{% url 'url_home2' %}">Cadastre-se agora</a>
+            <a href="{% url 'url_login' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+        <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastre-se
+            </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a id="a1" href="{% url 'url_insert_participante' %}">Cadastre-se como participante</a><br>
+            <a id="a2" href="{% url 'url_insert_psicologo' %}" style="float: left; width: 100%;">Cadastre-se como psicologo</a>
+          </div>
+        </div>
         </div>
         <h2 id="vindo"></h2>
 </body>
