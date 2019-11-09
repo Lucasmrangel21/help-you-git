@@ -1,6 +1,8 @@
 from django.contrib import admin
-from django.urls import path
-from helpyou.views import home, user_login, novo_cadastro1, home2, listagem_salas, novo_cadastro2
+from django.urls import path, include, re_path
+from helpyou.views import home, user_login, novo_cadastro1, home2, listagem_salas, novo_cadastro2, index, room
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -10,5 +12,7 @@ urlpatterns = [
     path('home2/', home2, name='url_home2'),
     path('listagem_salas/', listagem_salas, name='url_listagem_salas'),
     path('insert_psicologo/', novo_cadastro2, name='url_insert_psicologo'),
+    path('index/', index, name='index'),
+    path('chat/', include('helpyou.urls', namespace='chat')),
 
 ]
