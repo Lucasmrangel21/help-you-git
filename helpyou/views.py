@@ -7,6 +7,8 @@ from .models import TB_salas
 from .form import Cadastro_Participante
 from .form import Cadastro_Psicologo
 from .form import Criar_Sala
+from django.utils.safestring import mark_safe
+import json
 
 def home(request):
     return render(request, 'helpyou/home.html')
@@ -43,9 +45,13 @@ def nova_sala(request):
     if form.is_valid():
         form.save()
 
+def index(request):
+    return render(request, 'helpyou/index.html', {})
 
-
-
+def room(request, room_name):
+    return render(request, 'helpyou/room.html', {
+        'room_name_json': mark_safe(json.dumps(room_name))
+    })
 
 
 

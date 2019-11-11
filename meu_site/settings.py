@@ -13,7 +13,7 @@ SECRET_KEY = 'gl^g-3_7q0+#8^5x_h_aidt@^arwp_%01&rh_nh=@u9ltxnomk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['heingsh.pythonanywhere.com']
 
 
 # Application definition
@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'helpyou',
 ]
 
@@ -57,6 +58,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'meu_site.wsgi.application'
+ASGI_APPLICATION = 'meu_site.routing.application'
 
 
 # Database
@@ -107,3 +109,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
