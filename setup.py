@@ -2,11 +2,11 @@
 from setuptools import setup, find_packages
 
 requires = [
-       'django'
+       'django',
+        'channels'
        ]
 
-setup(name='mysite',
+setup(name='meu_site',
      version='1.0',
      packages=find_packages(),
-     install_requires=requires,
-     scripts=['./projeto/manage.py'])
+     install_requires=requires)
