@@ -13,7 +13,7 @@ SECRET_KEY = 'gl^g-3_7q0+#8^5x_h_aidt@^arwp_%01&rh_nh=@u9ltxnomk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['heingsh.pythonanywhere.com']
+ALLOWED_HOSTS = ['heingsh.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
