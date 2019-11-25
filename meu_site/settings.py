@@ -16,6 +16,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['heingsh.pythonanywhere.com', '127.0.0.1']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -59,7 +60,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'meu_site.wsgi.application'
 ASGI_APPLICATION = 'meu_site.routing.application'
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
