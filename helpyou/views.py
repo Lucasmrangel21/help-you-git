@@ -13,9 +13,6 @@ import json
 def home(request):
     return render(request, 'helpyou/home.html')
 
-def home2(request):
-    return render(request, 'helpyou/home2.html')
-
 def listagem_salas(request):
     data = {}
     data['salas'] = TB_salas.objects.all()
