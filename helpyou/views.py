@@ -36,6 +36,7 @@ def novo_cadastro2(request):
     data['form'] = form
     return render(request, 'helpyou/insert_psicologo.html', data)
 
+
 def nova_sala(request):
     data = {}
     form = Criar_Sala(request.Post or None)
