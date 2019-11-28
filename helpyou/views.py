@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login
 from .form import LoginForm
 from .models import TB_salas
 from .form import Cadastro_Participante
-from .form import Cadastro_Psicologo
 from .form import Criar_Sala
 from django.utils.safestring import mark_safe
 import json
@@ -29,12 +28,7 @@ def novo_cadastro1(request):
 
 def novo_cadastro2(request):
     data = {}
-    form = Cadastro_Psicologo(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('url_listagem_salas')
-    data['form'] = form
-    return render(request, 'helpyou/insert_psicologo.html', data)
+    return render(request, 'helpyou/salas_sugeridas.html', data)
 
 
 def nova_sala(request):
