@@ -17,25 +17,34 @@ def listagem_salas(request):
     data['salas'] = TB_salas.objects.all()
     return render(request, 'helpyou/listagem_salas.html', data)
 
+def salas_sugeridas(request):
+    data = {}
+    data['salas'] = TB_salas.objects.all()
+    return redirect('helpyou/salas_sugeridas.html')
+
 def novo_cadastro1(request):
     data = {}
     form = Cadastro_Participante(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('url_listagem_salas')
+        return redirect('helpyou/listagem_salas')
     data['form'] = form
     return render(request, 'helpyou/insert_participante.html', data)
 
 def novo_cadastro2(request):
     data = {}
+    data['salas'] = TB_salas.objects.all()
     return render(request, 'helpyou/salas_sugeridas.html', data)
 
 
 def nova_sala(request):
     data = {}
-    form = Criar_Sala(request.Post or None)
+    form = Criar_Sala(request.POST or None)
     if form.is_valid():
         form.save()
+        return redirect('url_listagem')
+    data['form'] = form
+    return render(request, 'helpyou/insert_sala.html', data)
 
 
 
