@@ -20,30 +20,50 @@
             box-sizing: border-box;
         }
 
+        #Login {
+            color: #ffffff;
+        }
+        #botao_login {
+                        display:grid;
+
+        }
         #navbar {
             display:grid;
             align-items: center;
             grid-template-areas: 'logo middle middle middle links';
             background: #ffffff;
             padding: .5rem;
+            }
 
         body{
             background-color: #79e7ff;
         }
+
+        img{
+            height:70px;
+            width: auto;
+
+        #logo {
+            grid-area: logo;
+        }
+
     </style>
     <meta charset="UTF-8">
     <title>Help you - Login</title>
 </head>
 <div id="navbar">
+    <img id="logo" src="https://i.imgur.com/uRfh30K.jpg"/>
+</div>
+<div id="Login">
     {% block title %}<h1>Log-in</h1>{% endblock %}
-
     {% block content %}
 </div>
-<p>Use o formulário abaixo:</p>
+<div id ="botao_login">
 <form action="." method="post">
     {{ form.as_p }}
     {% csrf_token %}
     <p><input type="submit" value="Log-in"></p>
+</div>
 </form>
 {%  endblock %}
 </html>
