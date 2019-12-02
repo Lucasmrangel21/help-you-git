@@ -2,10 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Listagem salas</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active,
+    .btn-primary:not(:disabled):not(.disabled):active,
+    .show>.btn-primary.dropdown-toggle {
+        color: #005cbf;
+        background-color: #fff;
+        border-color: #79e7ff;
+    }
+
+    #navbar {
+        display:grid;
+        align-items: center;
+        grid-template-areas: 'logo ';
+        background: #ffffff;
+        padding: .5rem;
+    }
+
+    img{
+        height:70px;
+        width: auto;
+    }
+
+    #msg {
+        color: #3c7b8a
+    }
+
+    body{
+        background-color: #79e7ff;
+    }
+
+</style>
 </head>
 <body>
-<h2>Listagem de salas</h2>
+<div id="navbar">
+    <img id="logo" src="https://i.imgur.com/uRfh30K.jpg"/>
+    <div id="msg">
+        <h2>Listagem de salas</h2>
+    </div>
+</div>
 {% for sala in salas %}
 <br>
 -{{ sala.nome }}

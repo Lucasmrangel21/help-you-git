@@ -28,7 +28,7 @@ def novo_cadastro1(request):
     form = Cadastro_Participante(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('helpyou/listagem_salas')
+        return redirect('helpyou/index')
     data['form'] = form
     return render(request, 'helpyou/insert_participante.html', data)
 
