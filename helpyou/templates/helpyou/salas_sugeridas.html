@@ -7,7 +7,7 @@
 <body>
 <h1>Salas sugeridas</h1>
 {% for sala in salas %}
-    {{sala}}
+    {{sala.nome}}
 <br>
 {%endfor%}
 <a href="{% url 'url_insert_sala' %}">Criar nova sala</a>

@@ -7,8 +7,10 @@
 <body>
 <h2>Listagem de salas</h2>
 {% for sala in salas %}
-    {{sala}}
 <br>
+-{{ sala.nome }}
+<br>
+<a href="{% url 'url_descricao' %}">Ver informações</a>
 {%endfor%}
 </body>
 </html>

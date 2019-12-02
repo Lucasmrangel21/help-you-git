@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from .form import LoginForm
 from .models import TB_salas
 from .form import Cadastro_Participante
+from .form import Cadastro_Psicologo
 from .form import Criar_Sala
 from django.utils.safestring import mark_safe
 import json
@@ -36,15 +37,31 @@ def novo_cadastro2(request):
     data['salas'] = TB_salas.objects.all()
     return render(request, 'helpyou/salas_sugeridas.html', data)
 
+def novo_psicologo(request):
+    data = {}
+    form = Cadastro_Psicologo(request.POST or None)
+    data['form'] = form
+    return render(request, 'helpyou/insert_psicologo.html', data)
 
 def nova_sala(request):
     data = {}
     form = Criar_Sala(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('url_listagem')
+        return redirect('index')
     data['form'] = form
     return render(request, 'helpyou/insert_sala.html', data)
+
+def informacao_sala(request,pk):
+    data = {}
+    sala = TB_salas.objects.get(pk=pk)
+    form = Criar_Sala(request.POST or None, instance=sala)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    data['form'] = form
+    data['sala'] = sala
+    return render(request, 'helpyou/descricao_sala.html', data)
 
 
 
